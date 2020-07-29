@@ -1,0 +1,3 @@
+[submodule "molgenis-brein-datamodel"]
+	path = molgenis-brein-datamodel
+	url = https://github.com/MaastrichtUniversity/molgenis-brein-datamodel

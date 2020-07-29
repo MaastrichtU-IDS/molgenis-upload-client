@@ -1,8 +1,10 @@
+import os
 from typing import Dict
 
 import molgenis.client
 import yaml
-from .logger import log
+from logger.logger import log
+from package_creator import packager
 
 class App(object):
     config = Dict
@@ -17,18 +19,13 @@ class App(object):
                 log.error("Error parsing configuration.", exc)
 
     def upload_emx_file(self):
-        log.info("Uploading EMX file.")
+        filename = os.path.basename(self.config['data']['csv-folder-location']) + ".zip"
+        packager.create_package(self.config['data']['csv-folder-location'], filename)
         session = molgenis.client.Session(self.config['molgenis']['url'])
         session.login(self.config['molgenis']['credentials']['username'],
                       self.config['molgenis']['credentials']['password'])
-        response = session.upload_zip(self.config['data']['zip-location'])
+        response = session.upload_zip(filename)
         print(response)
-
-    def test(self):
-        session = molgenis.client.Session(self.config['molgenis']['url'])
-        session.login(self.config['molgenis']['credentials']['username'],
-                      self.config['molgenis']['credentials']['password'])
-        self.upload_emx_file()
 
         # my_table = session.get("rd3_disease")
         # print(my_table)

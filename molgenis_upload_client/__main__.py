@@ -11,9 +11,9 @@ from .application import App
 
 
 @click.command()
-def test():
+def upload():
     app = App()
-    app.test()
+    app.upload_emx_file()
 
 
 @click.group()
@@ -21,7 +21,7 @@ def main(args=None):
     """Command line utility"""
 
 
-main.add_command(test)
+main.add_command(upload)
 
 
 if __name__ == "__main__":

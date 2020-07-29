@@ -5,4 +5,4 @@ molgenis:
     password: "password"
 
 data:
-  zip-location: "rd3.zip"
+  csv-folder-location: "molgenis-brein-datamodel/EMX"
