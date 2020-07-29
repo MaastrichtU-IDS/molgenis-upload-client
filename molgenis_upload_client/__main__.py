@@ -5,7 +5,6 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import click
-import logging
 import sys
 
 from .application import App
@@ -20,7 +19,6 @@ def test():
 @click.group()
 def main(args=None):
     """Command line utility"""
-    logging.basicConfig(stream=sys.stderr, level=logging.INFO)
 
 
 main.add_command(test)

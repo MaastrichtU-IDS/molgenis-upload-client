@@ -1,0 +1,8 @@
+molgenis:
+  url: "http://localhost/api/"
+  credentials:
+    username: "user"
+    password: "password"
+
+data:
+  zip-location: "rd3.zip"
