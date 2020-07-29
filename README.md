@@ -2,18 +2,14 @@
 Molgenis upload client for the BReIN project
 
 ### Run Molgenis Upload Client
-At the moment, only a 'test' function exists. Make sure to add username and password in application.py (will become configurable later on).
+In the *application.yml*, update the url of molgenis and the credentials according to your molgenis install (or run the Molgenis docker-compose and add user *user/password* to use the defaults). At the moment, only an *upload* function exists.
 
 ``` 
 pip install -e .
 ```
 
 ``` 
-molgenis_upload_client test
+molgenis_upload_client upload
 ```
 
-### Development environment
-
-### Deploy with Docker
-
-### Detail about CI/CD
+*Upload* packages the BReIN datamodel as a ZIP file and offers them to the Molgenis API.
